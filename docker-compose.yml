@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+  # SQL database
+  postgres:
+    image: "postgres:9.6.0"
+    restart: "always"
+    volumes:
+      - "ktor-starter-data:/var/lib/postgresql/data"
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_USER: "myusername"
+      POSTGRES_PASSWORD: "mypassword"
+      POSTGRES_DB: "postgres"
+    mem_limit: "8g"
+
+volumes:
+  ktor-starter-data:
+
+
+
+
+
+docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 54321:5432 -v ktor-starter-data:/var/lib/postgresql/data -d postgres
