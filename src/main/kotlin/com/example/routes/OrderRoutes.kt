@@ -11,7 +11,6 @@ fun Route.listOrdersRoute() {
     }
 }
 
-
 fun Route.getOrderRoute() {
     get("/order/{id?}") {
         val id = call.parameters["id"] ?: return@get call.respondText("Bad Request", status = HttpStatusCode.BadRequest)

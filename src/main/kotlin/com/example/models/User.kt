@@ -6,21 +6,13 @@ import org.jetbrains.exposed.sql.Table
 
 object Users : Table() {
     val id: Column<Int> = integer("id").autoIncrement().primaryKey()
-    val email: Column<String> = varchar("email", 100).uniqueIndex()
-    val password: Column<String> = varchar("password", 100)
-    val active: Column<Boolean> = bool("active")
+    val name: Column<String> = varchar("name", 100)
+    val oauthId: Column<String> = varchar("oauth_id", 100)
 }
 
 @Serializable
 data class User(
     val id: Int,
-    val email: String,
-    val active: Boolean? = null,
-    val password: String? = null
-)
-
-@Serializable
-data class NewUser(
-    val email: String,
-    val password: String
+    val name: String,
+    val oauthId: String,
 )

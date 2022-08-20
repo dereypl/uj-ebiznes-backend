@@ -10,8 +10,8 @@ services:
     ports:
       - "54321:5432"
     environment:
-      POSTGRES_USER: "myusername"
-      POSTGRES_PASSWORD: "mypassword"
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "testpass"
       POSTGRES_DB: "postgres"
     mem_limit: "8g"
 
@@ -22,4 +22,3 @@ volumes:
 
 
 
-docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 54321:5432 -v ktor-starter-data:/var/lib/postgresql/data -d postgres

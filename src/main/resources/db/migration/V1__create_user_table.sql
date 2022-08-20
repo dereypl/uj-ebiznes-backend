@@ -1,7 +1,7 @@
-create TABLE USERS (
-    id serial primary key,
-    email varchar(100) unique,
-    password varchar(100),
-    active boolean
+create TABLE USERS
+(
+    id         serial primary key,
+    name       varchar(100),
+    "oauth_id" varchar(100)
 )
 
