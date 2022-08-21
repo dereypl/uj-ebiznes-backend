@@ -1,11 +1,10 @@
 package models
 
 import kotlinx.serialization.Serializable
+import org.jetbrains.exposed.dao.IntIdTable
 import org.jetbrains.exposed.sql.Column
-import org.jetbrains.exposed.sql.Table
 
-object Users : Table() {
-    val id: Column<Int> = integer("id").autoIncrement().primaryKey()
+object Users : IntIdTable() {
     val name: Column<String> = varchar("name", 100)
     val oauthId: Column<String> = varchar("oauth_id", 100)
 }

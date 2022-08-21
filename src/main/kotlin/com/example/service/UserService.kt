@@ -19,7 +19,7 @@ class UserService {
 
     private fun toUser(row: ResultRow): User =
         User(
-            id = row[Users.id],
+            id = (row[Users.id] as Int),
             name = row[Users.name],
             oauthId = row[Users.oauthId],
         )
