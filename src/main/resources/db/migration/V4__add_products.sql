@@ -1,0 +1,17 @@
+insert into products (name, price, category_id) values ('Huawei MateBook D 16 i5‑12450H/16GB/512/Win11', 3899.00, 1);
+insert into products (name, price, category_id) values ('Apple MacBook Pro M1 Pro/32GB/512/Mac OS', 15299.00, 1);
+insert into products (name, price, category_id) values ('Lenovo IdeaPad 5 Pro‑16 Ryzen 5/16GB/1TB', 3299.00, 1);
+insert into products (name, price, category_id) values ('Dell Inspiron 16 Plus i7‑11800H/16GB/512/Win11', 5999.00, 1);
+insert into products (name, price, category_id) values ('Apple MacBook Pro M1 Max/64GB/2TB/Mac OS Space Gray', 22799.00, 1);
+insert into products (name, price, category_id) values ('Apple iPhone 13 128GB Pink', 4199.00, 2);
+insert into products (name, price, category_id) values ('Apple iPhone 13 128GB Alpine Green', 4199.00, 2);
+insert into products (name, price, category_id) values ('Nothing Phone (1) 8/128GB czarny', 2299.00, 2);
+insert into products (name, price, category_id) values ('Samsung Galaxy S20 FE 5G Fan Edition Niebieski', 2999.00, 2);
+insert into products (name, price, category_id) values ('Xiaomi Redmi Note 10S 6/128GB Onyx Gray', 1099.00, 2);
+insert into products (name, price, category_id) values ('Dysk Crucial 1TB 2,5" SATA SSD MX500', 419.00, 3);
+insert into products (name, price, category_id) values ('Dysk Samsung 500GB 2,5" SATA SSD 870 EVO', 319.00, 3);
+insert into products (name, price, category_id) values ('Dysk GOODRAM 128GB 2,5" SATA SSD CX400', 79.00, 3);
+insert into products (name, price, category_id) values ('Monitor Xiaomi Mi Curved Gaming', 1799.00, 4);
+insert into products (name, price, category_id) values ('Monitor LG UltraFine 32UN880‑B Ergo 4K HDR', 2999.00, 4);
+insert into products (name, price, category_id) values ('Monitor LG 32GP850‑B NanoIPS HDR10', 2099.00, 4);
+insert into products (name, price, category_id) values ('Silver Monkey Kabel HDMI 2.0 ‑ HDMI 1,5m', 26.99, 5);

@@ -29,7 +29,7 @@ fun Application.configureSecurity(simpleJwt: SimpleJWT) {
         jwt {
             verifier(simpleJwt.verifier)
             validate {
-                UserIdPrincipal(it.payload.getClaim("email").asString())
+                UserIdPrincipal(it.payload.getClaim("name").asString())
             }
         }
         oauth("auth-oauth-google") {
