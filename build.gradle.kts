@@ -9,6 +9,7 @@ plugins {
     kotlin("jvm") version "1.7.0"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.7.0"
     id("org.flywaydb.flyway") version "5.2.4"
+    id("io.ktor.plugin") version "2.1.0"
 }
 
 group = "com.example"
