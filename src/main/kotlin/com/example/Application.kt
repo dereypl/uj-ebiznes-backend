@@ -29,7 +29,7 @@ fun Application.module() {
 //        allowHeader(HttpHeaders.ContentType)
 //    }
 //
-    embeddedServer(Netty, port = 80, host = "https://uj-ebiznes-backend.azurewebsites.net") {
+    embeddedServer(Netty, port = 80) {
         configureSecurity(simpleJwt)
         configureSerialization()
         configureRouting(userService, simpleJwt)
