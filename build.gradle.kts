@@ -46,7 +46,7 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
     implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
-//    kotlin("plugin.serialization") version "1.4.31"
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
 }
 flyway {
     url = System.getenv("DB_URL")

@@ -24,12 +24,8 @@ fun Application.module() {
 
     DatabaseFactory.init()
 
-//    install(CORS) {
-//        allowHost("*")
-//        allowHeader(HttpHeaders.ContentType)
-//    }
-//
-    embeddedServer(Netty, port = 80) {
+    embeddedServer(Netty, port = 80, host = "192.168.8.178") {
+        cors()
         configureSecurity(simpleJwt)
         configureSerialization()
         configureRouting(userService, simpleJwt)
