@@ -33,7 +33,7 @@ fun Application.configureSecurity(simpleJwt: SimpleJWT) {
             }
         }
         oauth("auth-oauth-google") {
-            urlProvider = { "http://localhost:8080/callback" }
+            urlProvider = { "https://uj-ebiznes-backend.azurewebsites.net/callback" }
             providerLookup = {
                 OAuthServerSettings.OAuth2ServerSettings(
                     name = "google",
