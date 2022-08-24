@@ -2,6 +2,7 @@ package com.example
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.flywaydb.core.Flyway
@@ -10,7 +11,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 
 object DatabaseFactory {
-    private val dispatcher = Dispatchers.IO
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
     private val dbUrl = System.getenv("DB_URL")
     private val dbUser = System.getenv("DB_USER")
     private val dbPassword =  System.getenv("DB_PASSWORD")
