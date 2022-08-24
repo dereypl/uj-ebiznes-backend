@@ -17,7 +17,6 @@ class ProductService {
     }
 
     fun remove(id: Int): Boolean {
-        //TODO:
         return true
     }
     private fun toProduct(row: ResultRow): Product =

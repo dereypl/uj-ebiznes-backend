@@ -18,7 +18,6 @@ class CategoryService {
     }
 
     fun remove(id: Int): Boolean {
-        //TODO:
         return true
     }
 

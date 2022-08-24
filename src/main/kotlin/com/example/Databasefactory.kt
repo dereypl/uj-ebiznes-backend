@@ -10,6 +10,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 
 object DatabaseFactory {
+    private val dispatcher = Dispatchers.IO
     private val dbUrl = System.getenv("DB_URL")
     private val dbUser = System.getenv("DB_USER")
     private val dbPassword =  System.getenv("DB_PASSWORD")
@@ -34,7 +35,7 @@ object DatabaseFactory {
     }
 
     suspend fun <T> dbQuery(block: () -> T): T =
-        withContext(Dispatchers.IO) {
+        withContext(dispatcher) {
             transaction { block() }
         }
 

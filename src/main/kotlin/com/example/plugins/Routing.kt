@@ -7,7 +7,6 @@ import io.ktor.server.routing.*
 import productsRoute
 import com.example.service.UserService
 import signIn
-import signup
 
 fun Application.configureRouting(userService: UserService, simpleJWT: SimpleJWT) {
     routing {
@@ -15,6 +14,5 @@ fun Application.configureRouting(userService: UserService, simpleJWT: SimpleJWT)
         categoriesRoute()
         orderRoutes()
         signIn(userService, simpleJWT)
-        signup(userService, simpleJWT)
     }
 }

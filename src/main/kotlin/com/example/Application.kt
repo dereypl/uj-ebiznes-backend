@@ -22,7 +22,7 @@ fun Application.module() {
 
     DatabaseFactory.init()
 
-    embeddedServer(Netty, port = 80, host = "192.168.8.178") {
+    embeddedServer(Netty, port = 80) {
         cors()
         configureSecurity(simpleJwt)
         configureSerialization()

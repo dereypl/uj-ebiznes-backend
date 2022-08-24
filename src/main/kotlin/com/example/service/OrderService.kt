@@ -24,7 +24,6 @@ class OrderService {
         }
     }
     fun remove(id: Int): Boolean {
-        //TODO:
         return true
     }
 

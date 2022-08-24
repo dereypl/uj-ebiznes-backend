@@ -14,7 +14,7 @@ fun Application.cors() {
         allowNonSimpleContentTypes = true
         allowCredentials = true
         allowSameOrigin = true
-        //FIXME:
-        allowHost("*", listOf("http", "https"))
+        allowHost("uj-ebiznes-frontend.azurewebsites.net", listOf("http", "https"))
+        allowHost("localhost:3000",listOf("http", "https"))
     }
 }

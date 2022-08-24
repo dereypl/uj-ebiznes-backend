@@ -12,7 +12,6 @@ import org.joda.time.DateTime
 object Orders : IntIdTable() {
     val date = DateTime("date")
     val userId = reference("user_id", Users)
-    //    val price = double("price") //TODO: avoid order price change on product price update
 }
 
 object OrderEntityIdSerializer : KSerializer<EntityID<Int>> {
