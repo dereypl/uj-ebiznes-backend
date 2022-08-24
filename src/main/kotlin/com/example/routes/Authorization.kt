@@ -1,16 +1,4 @@
-import com.auth0.jwt.JWT
-import com.auth0.jwt.algorithms.Algorithm
-import com.example.UserSession
 import com.example.plugins.SimpleJWT
-import io.ktor.server.application.*
-import io.ktor.server.request.*
-import io.ktor.server.response.*
-import io.ktor.server.routing.*
-import org.mindrot.jbcrypt.BCrypt
-import io.ktor.auth.Authentication
-import io.ktor.auth.UserIdPrincipal
-import io.ktor.auth.authenticate
-import io.ktor.auth.principal
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.cio.*
@@ -18,12 +6,13 @@ import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.application.*
 import io.ktor.server.auth.*
-import io.ktor.server.sessions.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import service.UserService
-import java.util.*
+import com.example.service.UserService
 
 
 @Serializable
@@ -75,7 +64,7 @@ fun Route.signIn(userService: UserService, simpleJwt: SimpleJWT) {
             val token = simpleJwt.sign(userInfo.name)
             call.response.cookies.append(Cookie("jwt-token", token))
             call.response.headers.append("Authorization", "Bearer $token")
-            call.respondRedirect("http://localhost:3000/user/info")
+            call.respondRedirect("https://uj-ebiznes-frontend.azurewebsites.net")
         }
     }
 }
