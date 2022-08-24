@@ -49,9 +49,7 @@ fun Route.signIn(userService: UserService, simpleJwt: SimpleJWT) {
             }
 
             val token = simpleJwt.sign(userInfo.name)
-            call.response.cookies.append(Cookie("jwt-token", token))
-            call.response.headers.append("Authorization", "Bearer $token")
-            call.respondRedirect("https://uj-ebiznes-frontend.azurewebsites.net")
+            call.respondRedirect("https://uj-ebiznes-frontend.azurewebsites.net/auth?token=$token")
         }
     }
 }
