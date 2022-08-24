@@ -23,7 +23,7 @@ class OrderService {
             it[userId] = uId
         }
     }
-    suspend fun remove(id: Int): Boolean {
+    fun remove(id: Int): Boolean {
         //TODO:
         return true
     }

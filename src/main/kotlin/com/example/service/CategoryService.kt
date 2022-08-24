@@ -17,7 +17,7 @@ class CategoryService {
         Categories.select { Categories.id eq id }.mapNotNull { toCategory(it) }.singleOrNull()
     }
 
-    suspend fun remove(id: Int): Boolean {
+    fun remove(id: Int): Boolean {
         //TODO:
         return true
     }

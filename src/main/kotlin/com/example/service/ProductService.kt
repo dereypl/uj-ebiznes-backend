@@ -16,7 +16,7 @@ class ProductService {
         Products.select { Products.id eq id }.mapNotNull { toProduct(it) }.singleOrNull()
     }
 
-    suspend fun remove(id: Int): Boolean {
+    fun remove(id: Int): Boolean {
         //TODO:
         return true
     }
