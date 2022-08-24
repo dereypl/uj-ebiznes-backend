@@ -1,8 +1,8 @@
-package service
+package com.example.service
 
-import com.thebookofjoel.DatabaseFactory.dbQuery
-import models.User
-import models.Users
+import com.example.DatabaseFactory.dbQuery
+import com.example.models.User
+import com.example.models.Users
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select

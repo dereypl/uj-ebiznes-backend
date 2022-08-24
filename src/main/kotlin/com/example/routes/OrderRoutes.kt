@@ -6,8 +6,8 @@ import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import service.OrderService
-import service.UserService
+import com.example.service.OrderService
+import com.example.service.UserService
 
 fun Route.orderRoutes() {
     val orderService = OrderService()
@@ -23,11 +23,11 @@ fun Route.orderRoutes() {
                 "Missing id",
                 status = HttpStatusCode.BadRequest
             )
-            val order = orderService.getById(id.toInt()) ?: return@get call.respondText(
+            val customer = orderService.getById(id.toInt()) ?: return@get call.respondText(
                 "No customer with id $id",
                 status = HttpStatusCode.NotFound
             )
-            call.respond(order)
+            call.respond(customer)
         }
 
         post {
@@ -37,6 +37,15 @@ fun Route.orderRoutes() {
             user?.let { it1 -> orderService.create(it1.id) }
 
             call.respondText("Order stored correctly", status = HttpStatusCode.Created)
+        }
+
+        delete("{id?}") {
+            val id = call.parameters["id"] ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (orderService.remove(id.toInt())) {
+                call.respondText("Order removed correctly", status = HttpStatusCode.Accepted)
+            } else {
+                call.respondText("Not Found", status = HttpStatusCode.NotFound)
+            }
         }
     }
 }

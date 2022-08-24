@@ -1,7 +1,7 @@
-package service
+package com.example.service
 import Order
 import Orders
-import com.thebookofjoel.DatabaseFactory.dbQuery
+import com.example.DatabaseFactory.dbQuery
 import org.jetbrains.exposed.dao.EntityID
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
@@ -22,6 +22,10 @@ class OrderService {
         Orders.insert {
             it[userId] = uId
         }
+    }
+    suspend fun remove(id: Int): Boolean {
+        //TODO:
+        return true
     }
 
     private fun toOrder(row: ResultRow): Order =

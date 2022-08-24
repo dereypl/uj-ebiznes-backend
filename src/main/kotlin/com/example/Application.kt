@@ -3,16 +3,15 @@ package com.example
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import com.example.plugins.*
-import com.thebookofjoel.DatabaseFactory
-import service.UserService
+import com.example.service.UserService
 import io.ktor.server.application.*
 import io.ktor.server.sessions.*
 
 data class UserSession(val token: String)
 
-fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main(args: Array<String>): Unit = EngineMain.main(args)
 
-@Suppress("unused") // Referenced in application.conf
+@Suppress("unused")
 fun Application.module() {
     install(Sessions) {
         cookie<UserSession>("user_session")
