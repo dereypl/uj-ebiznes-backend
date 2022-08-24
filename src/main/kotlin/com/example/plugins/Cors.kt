@@ -5,7 +5,6 @@ import io.ktor.server.plugins.cors.routing.*
 
 fun Application.cors() {
     install(CORS) {
-        //FIXME:
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Put)
         allowMethod(HttpMethod.Delete)
@@ -15,6 +14,7 @@ fun Application.cors() {
         allowNonSimpleContentTypes = true
         allowCredentials = true
         allowSameOrigin = true
+        //FIXME:
         allowHost("*", listOf("http", "https"))
     }
 }

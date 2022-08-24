@@ -17,9 +17,13 @@ class UserService {
         Users.select { Users.oauthId eq oauthId }.mapNotNull { toUser(it) }.singleOrNull()
     }
 
+    suspend fun getById(id: Int): User? = dbQuery {
+        Users.select { Users.id eq id }.mapNotNull { toUser(it) }.singleOrNull()
+    }
+
     private fun toUser(row: ResultRow): User =
         User(
-            id = (row[Users.id] as Int),
+            id = row[Users.id],
             name = row[Users.name],
             oauthId = row[Users.oauthId],
         )

@@ -27,6 +27,6 @@ object CategoryEntityIdSerializer : KSerializer<EntityID<Int>> {
 @Serializable
 data class Category(
     @Serializable(with = CategoryEntityIdSerializer::class)
-    val id: Int,
+    val id: EntityID<Int>,
     val name: String,
 )
